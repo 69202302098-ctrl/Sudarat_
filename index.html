@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chompoo's Portfolio - สุดารัตน์ หมายมี</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Kanit & Itim for cute Thai typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            100: '#FFF0F5', // LavenderBlush / Very Light Pink
+                            200: '#FDE2E4', // Soft Pastel Pink
+                            300: '#FFCAD4', // Cotton Candy Pink
+                            400: '#B5E2FA', // Baby Blue Accent
+                            500: '#F72585', // Accent Deep Pink
+                            card: '#FFFFFF',
+                            text: '#5C3D46', // Soft dark pinkish brown for high contrast legibility
+                        }
+                    },
+                    fontFamily: {
+                        cute: ['Itim', 'cursive'],
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.5', transform: 'scale(0.85)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            color: #5C3D46;
+            background-color: #FFF0F5;
+            background-image: radial-gradient(#FFCAD4 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .heading-font {
+            font-family: 'Itim', cursive;
+        }
+        .cute-border {
+            border: 3px solid #FFCAD4;
+        }
+        .cute-shadow {
+            box-shadow: 0 10px 25px -5px rgba(255, 182, 193, 0.4), 0 8px 10px -6px rgba(255, 182, 193, 0.2);
+        }
+        .cute-shadow-sm {
+            box-shadow: 0 4px 12px rgba(255, 202, 212, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-pink-300 selection:text-pink-900">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-pink-100 transition-all">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="heading-font text-2xl font-bold text-pink-500 flex items-center gap-2 hover:scale-105 transition-transform">
+                <i class="fa-solid fa-heart text-pink-400"></i>
+                <span>Chompoo.p</span>
+            </a>
+            <nav class="hidden sm:flex space-x-6 heading-font text-lg">
+                <a href="#about" class="text-pink-700 hover:text-pink-500 transition-colors">เกี่ยวกับฉัน</a>
+                <a href="#education" class="text-pink-700 hover:text-pink-500 transition-colors">การศึกษา</a>
+                <a href="#interests" class="text-pink-700 hover:text-pink-500 transition-colors">งานอดิเรก & ทักษะ</a>
+                <a href="#contact" class="text-pink-700 hover:text-pink-500 transition-colors">ติดต่อ</a>
+            </nav>
+            <a href="#contact" class="bg-pink-300 hover:bg-pink-400 text-pink-900 font-medium px-4 py-1.5 rounded-full text-sm shadow-sm transition-all transform hover:-translate-y-0.5">
+                <i class="fa-regular fa-envelope mr-1"></i> ติดต่อฉัน
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <section id="about" class="pt-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 cute-shadow border-2 border-pink-100 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+                <!-- Floating background decor -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-100 rounded-full blur-2xl opacity-60"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-200 rounded-full blur-2xl opacity-60"></div>
+
+                <!-- Profile Image Frame -->
+                <div class="relative group">
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-tr from-pink-300 via-pink-200 to-pink-100 cute-shadow animate-float flex-shrink-0 relative">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-pink-50 flex items-center justify-center border-4 border-white relative">
+                            <!-- SVG Placeholder Illustration (fallback if image not present) -->
+                            <img src="https://placehold.co/400x400/FDE2E4/5C3D46?text=Chompoo+%F0%9F%8C%B8" 
+                                 alt="สุดารัตน์ หมายมี (ชมพู่)" 
+                                 class="w-full h-full object-cover rounded-full"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/FDE2E4/5C3D46?text=Chompoo';" />
+                        </div>
+                    </div>
+                    <!-- Cute Badge -->
+                    <span class="absolute bottom-2 right-2 bg-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md animate-bounce-slow flex items-center gap-1">
+                        <i class="fa-solid fa-sparkles"></i> Hi!
+                    </span>
+                </div>
+
+                <!-- Profile Info Header -->
+                <div class="text-center md:text-left space-y-4 z-10 flex-1">
+                    <div class="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium border border-pink-200 mb-1">
+                        ✨ Welcome to My World
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold heading-font text-pink-600 leading-tight">
+                        สวัสดีค่ะ, ฉันชื่อ <br class="hidden sm:inline" /><span class="text-pink-500">ชมพู่ สุดารัตน์</span> 🌸
+                    </h1>
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+                        นักศึกษาสาธารณสุขศาสตร์ ผู้มีความสดใส หลงรักในดนตรีไทย สัตว์เลี้ยงตัวโปรด และโทนสีชมพูพาสเทล!
+                    </p>
+                    
+                    <!-- Quick Info Pills -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+                        <span class="bg-pink-50 text-pink-600 border border-pink-200 px-3 py-1 rounded-xl text-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-cake-candles text-pink-400"></i> อายุ 19 ปี (เกิด 4 ก.ค. 2550)
+                        </span>
+                        <span class="bg-pink-50 text-pink-600 border border-pink-200 px-3 py-1 rounded-xl text-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-heart text-pink-400"></i> สีที่ชอบ: สีชมพู
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="space-y-6">
+            <div class="text-center space-y-2">
+                <h2 class="heading-font text-3xl font-bold text-pink-600 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-pink-400"></i> ประวัติการศึกษา
+                </h2>
+                <p class="text-gray-500 text-sm">เส้นทางการเรียนรู้และความมุ่งมั่นของฉัน</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- High School Card -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-100 cute-shadow-sm hover:border-pink-300 transition-all hover:-translate-y-1 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-pink-50 rounded-bl-full -z-0 group-hover:bg-pink-100 transition-colors"></div>
+                    <div class="relative z-10 space-y-3">
+                        <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-2xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <span class="inline-block text-xs font-semibold text-pink-500 bg-pink-50 px-2.5 py-0.5 rounded-md">มัธยมศึกษา</span>
+                        <h3 class="text-xl font-bold text-gray-800">โรงเรียนสุรพินท์พิทยา</h3>
+                        <p class="text-gray-600 text-sm">สำเร็จการศึกษาระดับมัธยมศึกษา สร้างรากฐานความรู้และกิจกรรมหลากหลาย</p>
+                    </div>
+                </div>
+
+                <!-- Current Education Card -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 cute-shadow hover:border-pink-300 transition-all hover:-translate-y-1 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-pink-100 rounded-bl-full -z-0 group-hover:bg-pink-200 transition-colors"></div>
+                    <div class="relative z-10 space-y-3">
+                        <div class="w-12 h-12 bg-pink-300 text-pink-800 rounded-2xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-semibold text-pink-700 bg-pink-100 px-2.5 py-0.5 rounded-md">ปัจจุบัน (ชั้นปีที่ 1)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h3>
+                        <div class="text-gray-600 text-sm space-y-1">
+                            <p class="font-medium text-pink-600">คณะสาธารณสุขศาสตร์บัณฑิต</p>
+                            <p>สาขาวิชาสาธารณสุขชุมชน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests" class="space-y-6">
+            <div class="text-center space-y-2">
+                <h2 class="heading-font text-3xl font-bold text-pink-600 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> งานอดิเรก & ความสามารถพิเศษ
+                </h2>
+                <p class="text-gray-500 text-sm">กิจกรรมที่ฉันรักและสิ่งที่ทำให้ฉันมีความสุข</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Special Skill Card -->
+                <div class="bg-gradient-to-br from-white to-pink-50 p-6 rounded-2xl border-2 border-pink-200 cute-shadow sm:col-span-2 lg:col-span-1 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-pink-400 text-white rounded-2xl flex items-center justify-center text-xl mb-4 shadow-sm">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-wider text-pink-500 uppercase">Special Ability</span>
+                        <h3 class="text-2xl font-bold heading-font text-gray-800 mt-1">เล่นดนตรีไทย</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            มีความชื่นชอบและสุนทรียภาพในดนตรีไทย เอกลักษณ์วัฒนธรรมที่ไพเราะและต้องใช้สมาธิและการฝึกฝนอย่างใส่ใจ
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-pink-100 flex items-center gap-2 text-pink-600 text-sm font-medium">
+                        <i class="fa-solid fa-compact-disc animate-spin"></i> สุนทรียภาพแห่งเสียงดนตรี
+                    </div>
+                </div>
+
+                <!-- Hobby 1: Pets -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-100 cute-shadow-sm space-y-4 hover:border-pink-300 transition-all">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-pink-400 uppercase">Hobby</span>
+                        <h3 class="text-xl font-bold heading-font text-gray-800 mt-1">เล่นกับสุนัขและแมว</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            การได้ใช้เวลากับน้องหมาและน้องแมวคือการเติมพลังใจที่ดีที่สุด สร้างรอยยิ้มและความผ่อนคลายในทุกๆ วัน 🐶🐱
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hobby 2: Movies -->
+                <div class="bg-white p-6 rounded-2xl border-2 border-pink-100 cute-shadow-sm space-y-4 hover:border-pink-300 transition-all">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-pink-400 uppercase">Hobby</span>
+                        <h3 class="text-xl font-bold heading-font text-gray-800 mt-1">ดูหนัง & ซีรีส์</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            ชอบรับชมภาพยนตร์และเรื่องราวหลากหลายแนว เพื่อผ่อนคลายความเครียด และเปิดรับมุมมองใหม่ๆ ผ่านแผ่นฟิล์ม 🎬
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="pb-6">
+            <div class="bg-gradient-to-r from-pink-200 via-pink-100 to-pink-200 rounded-3xl p-8 sm:p-12 cute-shadow border-2 border-pink-300 text-center space-y-6 relative overflow-hidden">
+                <div class="max-w-xl mx-auto space-y-4 relative z-10">
+                    <div class="w-16 h-16 bg-white text-pink-500 rounded-full flex items-center justify-center text-2xl mx-auto cute-shadow-sm">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h2 class="heading-font text-3xl sm:text-4xl font-bold text-pink-700">
+                        ช่องทางการติดต่อ
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        สามารถส่งข้อความ หรือติดต่องาน/พูดคุยสอบถามเพิ่มเติมกับชมพู่ได้ทางอีเมลนักศึกษาเลยนะคะ
+                    </p>
+                    
+                    <!-- Email Card -->
+                    <div class="bg-white/90 backdrop-blur-sm p-4 rounded-2xl border border-pink-200 inline-flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mx-auto cute-shadow-sm">
+                        <i class="fa-regular fa-envelope text-pink-500 text-xl"></i>
+                        <span class="font-mono text-sm sm:text-base text-gray-700 font-medium break-all">69202302098@scphkk.ac.th</span>
+                        <button onclick="copyToClipboard('69202302098@scphkk.ac.th')" class="bg-pink-100 hover:bg-pink-200 text-pink-700 text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 self-end sm:self-auto">
+                            <i class="fa-regular fa-copy"></i> คัดลอก
+                        </button>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="mailto:69202302098@scphkk.ac.th" class="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-envelope"></i> ส่งอีเมลหาชมพู่
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white/80 border-t border-pink-100 py-6 text-center text-xs text-pink-400 space-y-2">
+        <p class="heading-font text-sm">
+            Created with <i class="fa-solid fa-heart text-pink-500"></i> for Sudarat Maingmee
+        </p>
+        <p class="text-gray-400">
+            &copy; 2026 Sudarat Portfolio. Ready for GitHub Pages.
+        </p>
+    </footer>
+
+    <!-- Custom Toast Message Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-pink-600 text-white px-5 py-3 rounded-2xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 z-50">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-msg">คัดลอกอีเมลเรียบร้อยแล้ว!</span>
+    </div>
+
+    <script>
+        // Function to safely copy text to clipboard inside iframe environment
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            showToast("คัดลอกอีเมลเรียบร้อยแล้วค่ะ! ✨");
+        }
+
+        // Custom cute toast notification replacing standard alert
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            const toastMsg = document.getElementById("toast-msg");
+            
+            toastMsg.innerText = message;
+            toast.classList.remove("translate-y-20", "opacity-0");
+            toast.classList.add("translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+                toast.classList.remove("translate-y-0", "opacity-100");
+                toast.classList.add("translate-y-20", "opacity-0");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
